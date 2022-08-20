@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :postings
   has_many :savings
   has_many :reviews
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :address, presence: true
 end
