@@ -1,0 +1,18 @@
+.banner {
+  background-color: #FFECD5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-right:72px;
+  margin-left:72px;
+  border-radius: 16px;
+
+  .container-banner-left {
+    img {
+      transform: translate(-100px, 48px);
+    }
+  }
+}
