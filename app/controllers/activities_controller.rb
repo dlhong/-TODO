@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
+  before_action :set_activity, only: %i[show]
 
   def index
     @activities = Activity.all
@@ -7,7 +8,10 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-    #authorize @posting
+    # authorize @posting
+  end
+
+  def show
   end
 
   def create
@@ -19,11 +23,16 @@ class ActivitiesController < ApplicationController
     else
       render :new
     end
-    #authorize @activity
+    # authorize @activity
   end
 
   def activity_params
     params.require(:activity).permit(:summary, :name, :address, :contact_info, :price)
   end
 
+  private
+
+  def set_activity
+    @activity = Activity.find(params[:id])
+  end
 end
