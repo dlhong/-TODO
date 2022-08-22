@@ -1,12 +1,25 @@
 <div class="banner">
   <div class="container-banner-left">
-    <h2>Browse For New</h2>
-    <h2>Acitivies Near You</h2>
+    <h2>Browse For New Acitivies Nearby</h2>
   </div>
   <div class="container-banner-right">
-    <%= image_tag("banner.svg") %>
+    <%= image_tag("banner1.svg", :class => "banner-img") %>
   </div>
 </div>
+  <div class="steps-container">
+    <div class="step">
+      <%= image_tag("destination.svg") %>
+      <h4>Enter location</h4>
+    </div>
+    <div class="step">
+      <%= image_tag("search.svg") %>
+      <h4>Choose an activity</h4>
+      </div>
+    <div class="step">
+      <%= image_tag("enjoy.svg") %>
+      <h4>Enjoy</h4>
+    </div>
+  </div>
 <div class="container-index">
   <div class="index-display">
     <% @activities.each do |activity| %>

@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+body {
+  background-color: #fafafa;
+  font-family: $Montserrat;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 200px;
+
+  .step{
+    text-align: center;
+  }
+}

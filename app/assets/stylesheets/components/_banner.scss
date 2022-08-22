@@ -10,9 +10,20 @@
   margin-left:72px;
   border-radius: 16px;
 
+  .container-banner-right {
+    .banner-img {
+      transform: translate(-150px, 85px);
+    }
+  }
+
   .container-banner-left {
-    img {
-      transform: translate(-100px, 48px);
+    width: 570px;
+    word-wrap: normal;
+    h2 {
+      font-size: 50px;
+      margin-left: 25%;
+      font-family: $Montserrat;
+      font-weight: lighter;
     }
   }
 }
