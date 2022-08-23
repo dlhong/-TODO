@@ -21,7 +21,7 @@
             <%= image_tag "https://images.pexels.com/photos/2023386/pexels-photo-2023386.jpeg?auto=compress&cs=tinysrgb&w=1600", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "About us", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
         <%# else %>
