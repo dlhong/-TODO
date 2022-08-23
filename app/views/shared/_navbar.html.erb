@@ -1,6 +1,6 @@
 <div class="nav">
   <div class="right-nav">
-    <h4>Around-U</h4>
+    <h4>AroundU</h4>
   </div>
   <div class="mid-nav">
     <ol>
@@ -12,5 +12,6 @@
   </div>
   <div class="left-nav">
     <button type="button" class="btn btn-primary">Log in</button>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
   </div>
 </div>
