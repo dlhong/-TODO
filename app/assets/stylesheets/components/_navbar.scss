@@ -59,7 +59,7 @@
 .nav {
   top: 0;
   position: sticky;
-  padding-top: 35px;
+  padding-top: 30px;
   display: flex;
   justify-content: space-evenly;
   z-index: 10;
@@ -96,6 +96,9 @@
           transform: scaleX(1);
 
         }
+  }
+  .btn {
+    border-radius: 8px;
   }
 
 }
