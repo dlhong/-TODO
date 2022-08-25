@@ -26,61 +26,32 @@
     <h4>Enjoy</h4>
   </div>
 </div>
-<div class="top-container">
+
   <div class="left-top">
-    <h2>TOP RATED</h2>
+    <h2>Top Rated Activities</h2>
   </div>
   <div class="right-top">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= image_tag("destination.svg") %>
-        </div>
-        <div class="carousel-item">
-          <%= image_tag("search.svg") %>
-        </div>
-        <div class="carousel-item">
-          <%= image_tag("enjoy.svg") %>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <div class="swiper">
+  <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <% @activities.each do |activity| %>
+        <div class="swiper-slide"> <%= render 'shared/cardview', activity: activity %></div>
+      <% end %>
     </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <%# <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> %>
+
+    <!-- If we need scrollbar -->
+    <%# <div class="swiper-scrollbar"></div> %>
+    </div>
+
   </div>
 </div>
 <div class="container-index">
   <!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
-
-  <!-- If we need navigation buttons -->
-  <%# <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div> %>
-
-  <!-- If we need scrollbar -->
-  <%# <div class="swiper-scrollbar"></div> %>
-</div>
-</div>
 <%=  render 'shared/footer' %>
