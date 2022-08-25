@@ -8,13 +8,13 @@ class SavingsController < ApplicationController
   end
 
   def create
-    @saving = Saving.new(savings_params)
+    @saving = Saving.new()
     @saving.user = current_user
     @saving.activity = @activity
     if @saving.save
-      redirect_to my_savings_path
+      redirect_to activities_path
     else
-      render "savings/show"
+      render "activities/show"
     end
     # authorize @saving
   end
