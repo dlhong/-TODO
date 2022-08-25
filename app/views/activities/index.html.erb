@@ -60,9 +60,15 @@
 </div>
 <div class="container-index">
   <div class="index-display">
+  <ul>
     <% @activities.each do |activity| %>
-      <%= activity.name%>
+      <li><%= activity.summary%>,
+      <%= activity.name%>,
+      <%= activity.address%>,
+      <%= activity.contact_info%>,
+      <%= activity.price%> EURO</li>
     <% end %>
+  </ul>
   </div>
 </div>
 <%=  render 'shared/footer' %>
