@@ -12,6 +12,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @saving = Saving.new
   end
 
   def create

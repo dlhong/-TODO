@@ -1,1 +1,4 @@
 <%= @activity.name%>
+<%= simple_form_for [@activity, @saving] do |f| %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
