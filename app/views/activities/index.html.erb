@@ -1,3 +1,63 @@
+<div class="banner">
+  <div class="container-banner-left">
+    <h2>Browse For New Acitivies Nearby</h2>
+  </div>
+  <div class="container-banner-right">
+    <%= image_tag("banner1.svg", :class => "banner-img") %>
+  </div>
+</div>
+<div class="works">
+<button type="button" class="hiw">How it works</button>
+<h2>Easy step to find new experiences</h2>
+<p>Create new and unforetable adventures</p>
+</div>
+<div class="steps-container">
+  <div class="step">
+    <%= image_tag("destination.svg") %>
+    <h4>Enter location</h4>
+  </div>
+  <div class="step">
+    <%= image_tag("search.svg") %>
+    <h4>Choose an activity</h4>
+    </div>
+  <div class="step">
+    <%= image_tag("enjoy.svg") %>
+    <h4>Enjoy</h4>
+  </div>
+</div>
+<div class="top-container">
+  <div class="left-top">
+    <h2>TOP RATED</h2>
+  </div>
+  <div class="right-top">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag("destination.svg") %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("search.svg") %>
+        </div>
+        <div class="carousel-item">
+          <%= image_tag("enjoy.svg") %>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
 <div class="container-index">
   <div class="index-display">
     <% @activities.each do |activity| %>
@@ -5,3 +65,4 @@
     <% end %>
   </div>
 </div>
+<%=  render 'shared/footer' %>
