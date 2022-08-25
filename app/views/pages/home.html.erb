@@ -65,12 +65,9 @@
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
+    <% @activities.each do |activity| %>
+      <div class="swiper-slide"> <%= render 'shared/cardview', activity: activity %></div>
+    <% end %>
   </div>
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
