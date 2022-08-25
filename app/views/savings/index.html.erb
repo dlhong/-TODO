@@ -4,7 +4,8 @@
     <% @savings.each do |saving| %>
       <li><%= saving.user_id%>,
       <%= saving.activity_id%>,
-      <%= saving.attendance%></li>
+      <%= saving.attendance%>
+      <%= current_user.id%></li>
     <% end %>
   </ul>
   </div>

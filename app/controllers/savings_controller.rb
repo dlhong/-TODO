@@ -2,9 +2,8 @@ class SavingsController < ApplicationController
   before_action :set_saving, only: :destroy
   before_action :set_activity, only: %i[new create]
 
-
   def index
-    @savings = Saving.all
+    @savings = Saving.where(user_id: current_user.id)
   end
 
   def new
@@ -13,7 +12,7 @@ class SavingsController < ApplicationController
   end
 
   def create
-    @saving = Saving.new()
+    @saving = Saving.new
     @saving.user = current_user
     @saving.activity = @activity
     if @saving.save
