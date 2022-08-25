@@ -6,6 +6,6 @@ class Activity < ApplicationRecord
 
   validates :name, presence: true
   validates :address, presence: true
-  validates_length_of :summary, minimum: 20
+  validates_length_of :summary, minimum: 2
   validates :contact_info, presence: true
 end
