@@ -1,0 +1,11 @@
+<div class="container-index">
+  <div class="index-display">
+  <ul>
+    <% @savings.each do |saving| %>
+      <li><%= saving.user_id%>,
+      <%= saving.activity_id%>,
+      <%= saving.attendance%></li>
+    <% end %>
+  </ul>
+  </div>
+</div>

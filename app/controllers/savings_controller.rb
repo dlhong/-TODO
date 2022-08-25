@@ -2,6 +2,11 @@ class SavingsController < ApplicationController
   before_action :set_saving, only: :destroy
   before_action :set_activity, only: %i[new create]
 
+
+  def index
+    @savings = Saving.all
+  end
+
   def new
     @saving = Saving.new
     # authorize @saving
@@ -22,6 +27,19 @@ class SavingsController < ApplicationController
   def destroy
     @saving.destroy
     redirect_to activity_path(@saving.activity)
+  end
+
+  def edit
+    @saving = Saving.find(params[:id])
+  end
+
+  def update
+    @saving = Saving.find(params[:id])
+    if @saving.update(saving_params)
+      redirect_to savings_path
+    else
+      render :new
+    end
   end
 
   private
