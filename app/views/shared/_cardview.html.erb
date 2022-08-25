@@ -1,4 +1,4 @@
-<%= link_to "#" do %>
+<%= link_to activity_path(activity) do %>
   <section>
     <div class="cards">
       <div class="top test" style="background-image: url('https://images.unsplash.com/photo-1593739742226-5e5e2fdb1f1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')"></div>
@@ -6,12 +6,19 @@
         <div class="card-infos">
             <div class="btn"><%= activity.name %></div>
             <div class="cont-info">
-            <h2><%= activity.name %>
-            <p><%= activity.name%>...</p>
+            <h2><%= activity.name %></h2>
+            <p><%= activity.summary %>...</p>
             </div>
-            <h2 class="card-pricing">$100</h2>
+            <h2 class="card-pricing"><%= activity.price %> € </h2>
         </div>
       </div>
     </div>
   </section>
 <% end %>
+
+
+      <%# <li><%= activity.name%>
+      <%# <%= activity.summary%>
+      <%# <%= activity.address%>
+      <%# <%= activity.contact_info%>
+      <%# <%= activity.price EURO</li> %>
