@@ -34,7 +34,7 @@ class SavingsController < ApplicationController
 
   def update
     @saving = Saving.find(params[:id])
-    @saving.attendance = true
+    @saving.attendance = !@saving.attendance
     if @saving.save
       redirect_to my_savings_path
     else
