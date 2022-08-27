@@ -4,8 +4,10 @@
   </div>
   <div class="mid-nav">
     <ol>
-      <li class="nav-item"><a href="#">My Profile</a></li>
-      <li class="nav-item"><a href="#">Activities</a></li>
+      <%# <li class="nav-item"><a href="#">My Profile</a></li> %>
+      <%= link_to "My Profile", my_savings_path, class: "nav-item" %>
+      <%# <li class="nav-item"><a href="#">Activities</a></li> %>
+      <%= link_to "Activities", activities_path, class: "nav-item" %>
       <li class="nav-item"><a href="#">About-Us</a></li>
       <li class="nav-item"><a href="#">FAQs</a></li>
     </ol>
