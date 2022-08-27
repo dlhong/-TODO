@@ -18,6 +18,7 @@ class SavingsController < ApplicationController
     if @saving.save
       redirect_to my_savings_path
     else
+      flash.alert = "It has been saved before"
       render "activities/show"
     end
     # authorize @saving
@@ -38,6 +39,7 @@ class SavingsController < ApplicationController
     if @saving.save
       redirect_to my_savings_path
     else
+
       render :new
     end
   end
