@@ -13,6 +13,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @saving = Saving.new
+    @review = Review.new
   end
 
   def create

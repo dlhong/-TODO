@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @activity = Activity.new
     # authorize @review
   end
 
@@ -12,9 +13,10 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.activity = @activity
     if @review.save
-      redirect_to my_reviews_path
+      redirect_to activity_path(@activity)
     else
-      render "reviews/show"
+      flash.alert = "Review has not been saved, please use at minimum of 5 characters for the content of your review"
+      redirect_to activity_path(@activity)
     end
     # authorize @review
   end
