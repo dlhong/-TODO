@@ -1,6 +1,14 @@
 <div class="banner">
   <div class="container-banner-left">
     <h2>Browse For New Activities Nearby</h2>
+    <div class="input-group">
+      <div class="form-outline">
+        <input type="search" id="form1" class="form-control" placeholder="Search..." />
+      </div>
+      <button type="button" class="btn btn-primary" style="background-color: #114B5F;">
+      <i class="fas fa-search"></i>
+      </button>
+    </div>
     <%= link_to "Show all Activities", activities_path %>
   </div>
   <div class="container-banner-right">
@@ -45,8 +53,8 @@
       <div class="swiper-pagination"></div>
 
       <!-- If we need navigation buttons -->
-      <%# <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div> %>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
 
       <!-- If we need scrollbar -->
       <%# <div class="swiper-scrollbar"></div> %>
