@@ -25,7 +25,7 @@ class SavingsController < ApplicationController
 
   def destroy
     @saving.destroy
-    redirect_to activity_path(@saving.activity)
+    redirect_to my_savings_path
   end
 
   def edit
@@ -34,8 +34,9 @@ class SavingsController < ApplicationController
 
   def update
     @saving = Saving.find(params[:id])
-    if @saving.update(saving_params)
-      redirect_to savings_path
+    @saving.attendance = true
+    if @saving.save
+      redirect_to my_savings_path
     else
       render :new
     end
