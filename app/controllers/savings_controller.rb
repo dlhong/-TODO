@@ -16,7 +16,7 @@ class SavingsController < ApplicationController
     @saving.user = current_user
     @saving.activity = @activity
     if @saving.save
-      redirect_to activities_path
+      redirect_to my_savings_path
     else
       render "activities/show"
     end

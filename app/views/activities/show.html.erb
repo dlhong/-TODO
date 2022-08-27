@@ -1,4 +1,4 @@
 <%= @activity.name%>
 <%= simple_form_for [@activity, @saving] do |f| %>
-  <%= f.submit class: 'btn btn-flat' %>
+  <%= f.button :submit, 'Save Activity', class: 'btn btn-flat' %>
 <% end %>
