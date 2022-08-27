@@ -16,8 +16,9 @@ class SavingsController < ApplicationController
     @saving.user = current_user
     @saving.activity = @activity
     if @saving.save
-      redirect_to activities_path
+      redirect_to my_savings_path
     else
+      flash.alert = "It has been saved before"
       render "activities/show"
     end
     # authorize @saving
@@ -25,7 +26,7 @@ class SavingsController < ApplicationController
 
   def destroy
     @saving.destroy
-    redirect_to activity_path(@saving.activity)
+    redirect_to my_savings_path
   end
 
   def edit
@@ -34,9 +35,11 @@ class SavingsController < ApplicationController
 
   def update
     @saving = Saving.find(params[:id])
-    if @saving.update(saving_params)
-      redirect_to savings_path
+    @saving.attendance = !@saving.attendance
+    if @saving.save
+      redirect_to my_savings_path
     else
+
       render :new
     end
   end
