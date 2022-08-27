@@ -4,13 +4,11 @@
     <% @savings.each do |saving| %>
       <li><%= saving.user.first_name%>,
       <%= saving.activity.name%>,
-      <%= saving.attendance%></li>
-      <div class="dlt-btn">
-        <button class="btn-show"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>
-      </div>
-      <div class="dlt-btn">
-        <button class="btn-show"><%= link_to "Delete Saving", saving_path(saving),method: :delete, data: {confirm: "Are you sure?"} %></button>
-      </div>
+      <%= saving.attendance%>
+      <% unless saving.attendance %>
+        <%= link_to "Attend", saving_path(saving),method: :patch %>
+      <% end %>
+      <%= link_to "Delete", saving_path(saving),method: :delete, data: {confirm: "Are you sure?"} %></button></li>
     <% end %>
   </ul>
   </div>
