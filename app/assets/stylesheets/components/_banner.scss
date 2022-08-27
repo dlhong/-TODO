@@ -20,6 +20,14 @@
     width: 610px;
     word-wrap: normal;
     padding-left: 10%;
+    #form1 {
+      width: 380px;
+      padding: 10px 16px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      border: none;
+
+    }
     h2 {
       font-size: 50px;
       font-family: $Montserrat;
@@ -35,5 +43,13 @@
       border-radius: 32px;
       border: none;
     }
+  }
+}
+
+
+.input-group {
+  .btn {
+    height: 44px;
+    margin-top: 6px
   }
 }
