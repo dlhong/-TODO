@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :activities, only: %I[index new create show] do
-    resources :savings
+    resources :savings, only: %i[new create]
     resources :reviews, only: %i[new create destroy]
   end
+  resources :savings, only: %i[edit update destroy]
 end
