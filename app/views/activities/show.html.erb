@@ -1,4 +1,17 @@
-<%= @activity.name%>
-<%= simple_form_for [@activity, @saving] do |f| %>
-  <%= f.button :submit, 'Save Activity', class: 'btn btn-flat' %>
-<% end %>
+<div class="show-container">
+  <div class="show-content-div">
+    <h2><%= @activity.name%></h2>
+    <div class="show-images">
+      <img src="https://images.unsplash.com/photo-1528543606781-2f6e6857f318?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1542359649-31e03cd4d909?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" alt="">
+    </div>
+      <h3><%= @activity.summary %></h3>
+    <div class="show-info">
+      <p>Location: <%= @activity.address%></p>
+      <p>Price: <%= @activity.price%>€</p>
+    </div>
+    <%= simple_form_for [@activity, @saving] do |f| %>
+    <%= f.button :submit, 'Save Activity', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
