@@ -4,6 +4,7 @@ class SavingsController < ApplicationController
 
   def index
     @savings = Saving.where(user_id: current_user.id)
+    @user = current_user
   end
 
   def new
