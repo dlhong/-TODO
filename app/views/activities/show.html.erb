@@ -13,6 +13,7 @@
     <%= simple_form_for [@activity, @saving] do |f| %>
     <%= f.button :submit, 'Save Activity', class: 'btn btn-primary' %>
     <% end %>
+    <%= link_to "Go back to Activities", activities_path %>
   </div>
 </div>
 <%=  render 'shared/footer' %>
