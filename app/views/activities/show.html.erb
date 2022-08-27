@@ -11,7 +11,7 @@
       <p>Price: <%= @activity.price%>€</p>
     </div>
     <%= simple_form_for [@activity, @saving] do |f| %>
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= f.button :submit, 'Save Activity', class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
