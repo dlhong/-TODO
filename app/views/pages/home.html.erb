@@ -26,32 +26,32 @@
     <h4>Enjoy</h4>
   </div>
 </div>
-
+<div class="top-cont">
   <div class="left-top">
-    <h2>Top Rated Activities</h2>
+    <h2>Top Rated</h2>
+    <h2>Activities</h2>
+    <p><%= link_to "Show all Activities", activities_path %></p>
   </div>
-  <div class="right-top">
-    <div class="swiper">
-  <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <% @activities.each do |activity| %>
-        <div class="swiper-slide"> <%= render 'shared/cardview', activity: activity %></div>
-      <% end %>
+  <div class="slide-container swiper">
+    <div class="slide-content">
+
+      <div class="card-wrapper swiper-wrapper">
+        <!-- Slides -->
+        <% @activities.each do |activity| %>
+          <div class="card swiper-slide"> <%= render 'shared/cardview', activity: activity %></div>
+        <% end %>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <%# <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> %>
+
+      <!-- If we need scrollbar -->
+      <%# <div class="swiper-scrollbar"></div> %>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <%# <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div> %>
-
-    <!-- If we need scrollbar -->
-    <%# <div class="swiper-scrollbar"></div> %>
-    </div>
-
   </div>
 </div>
-<div class="container-index">
   <!-- Slider main container -->
 <%=  render 'shared/footer' %>
