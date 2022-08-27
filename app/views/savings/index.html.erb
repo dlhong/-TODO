@@ -3,7 +3,7 @@
   <ul>
     <% @savings.each do |saving| %>
       <li><%= saving.user.first_name%>,
-      <%= saving.activity.name%>,
+      <%= link_to saving.activity.name, activity_path(saving.activity)%>,
       <%= saving.attendance%></li>
       <div class="dlt-btn">
         <button class="btn-show"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>
