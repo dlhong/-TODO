@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
       flash.alert = "Review has not been saved, please use at minimum of 5 characters for the content of your review"
       redirect_to activity_path(@activity)
     end
-    # authorize @review
+    authorize @review
   end
 
   def destroy
@@ -34,6 +34,7 @@ class ReviewsController < ApplicationController
 
   def set_review
     @review = Review.find(params[:id])
+    authorize @review
   end
 
   def set_activity

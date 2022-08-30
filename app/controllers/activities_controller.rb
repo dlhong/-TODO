@@ -3,17 +3,20 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show]
 
   def index
-    @activities = Activity.all
+    @activities = policy_scope(Activity)
+    @activity = Activity.new
+    authorize @activity
   end
 
   def new
     @activity = Activity.new
-    # authorize @posting
+    authorize @activity
   end
 
   def show
     @saving = Saving.new
     @review = Review.new
+    authorize @activity
   end
 
   def create
@@ -25,7 +28,7 @@ class ActivitiesController < ApplicationController
     else
       render :new
     end
-    # authorize @activity
+    authorize @activity
   end
 
   def activity_params
