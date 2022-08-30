@@ -4,5 +4,8 @@
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
 
-import {swiper} from "./init_swiper";
-swiper;
+// import {swiper} from "./init_swiper";
+// document.addEventListener("turbolinks:load", () => {
+//   swiper;
+//   console.log("hello");
+// });
