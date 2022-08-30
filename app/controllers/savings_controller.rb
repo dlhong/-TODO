@@ -3,35 +3,40 @@ class SavingsController < ApplicationController
   before_action :set_activity, only: %i[new create]
 
   def index
-    @savings = Saving.where(user_id: current_user.id)
+    @savings = policy_scope(Saving).where(user_id: current_user.id)
+    # @saving = Saving.new
     @user = current_user
   end
 
   def new
     @saving = Saving.new
-    # authorize @saving
+    authorize @saving
   end
 
   def create
     @saving = Saving.new
     @saving.user = current_user
     @saving.activity = @activity
+    @review = Review.new
     if @saving.save
       redirect_to my_savings_path
     else
       flash.alert = "It has been saved before"
       render "activities/show"
     end
-    # authorize @saving
+    authorize @saving
+    authorize @activity
   end
 
   def destroy
     @saving.destroy
     redirect_to my_savings_path
+    authorize @saving
   end
 
   def edit
     @saving = Saving.find(params[:id])
+    authorize @saving
   end
 
   def update
@@ -43,6 +48,7 @@ class SavingsController < ApplicationController
 
       render :new
     end
+    authorize @saving
   end
 
   private
