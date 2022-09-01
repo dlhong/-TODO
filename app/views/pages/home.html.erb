@@ -10,16 +10,21 @@
       </button>
     </div> %>
     <div class="input-group">
-      <%= form_tag activities_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Search..."
-        %>
-        <%= button_tag(type: "submit", class: "btn btn-primary", style: "background-color: #114B5F") do %>
-          <i class="fas fa-search"></i>
+      <div class="form-outline">
+        <%= form_tag activities_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            type: "search",
+            id:"form1",
+            class: "form-control",
+            placeholder: "Search..."
+          %>
+        </div>
+          <%= button_tag(type: "submit", class: "btn btn-primary", style: "background-color: #114B5F") do %>
+            <i class="fas fa-search"></i>
+          <% end %>
         <% end %>
-      <% end %>
+
     </div>
 
     <%= link_to "Show all Activities", activities_path %>
