@@ -7,9 +7,10 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 65px;
   padding-top: 50px;
   padding-bottom: 25px;
+  width: 60%;
 }
 
 a {
@@ -20,17 +21,15 @@ a {
 
 .cards {
   border-radius: 16px;
-  width: 265px;
-  height: 480px;
-  max-height: 480px;
-
+  width: 300px;
+  margin-bottom: 30px;
+  height: 330px;
 
 
   .top {
-    width: 265px;
-    height: 70%;
-    border-top-left-radius: 26px;
-    border-top-right-radius: 26px;
+    width: 300px;
+    height: 280px;
+    border-radius: 26px;
   }
   .test {
     background-size: cover;
@@ -38,41 +37,25 @@ a {
   }
 
   .bottom {
-    width: 265px;
-    height: 30%;
-    display: flex;
-    border-radius: 24px;
-    margin-top: -20px;
-    background-color: #fffdfd;
-
+    width: 300px;
+    height: 50px;
+    margin-top: 16px;
 
 
     .card-infos {
-      width: 265px;
-      max-width: 250px;
+      width: 300px;
       color: black;
-      position: relative;
 
-
-
-      .btn {
-          font-size: 12px;
-          font-weight: 500;
-          color: #999999;
-          border: 1px solid #999999;
-          border-radius: 24px;
-          padding: 4px 6px;
-          margin-left: 12px;
-          margin-top: 12px;
-        }
 
         .cont-info {
-          margin: 12px ;
-
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
           h2 {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin: 0;
           }
 
 
@@ -80,20 +63,88 @@ a {
           p {
             font-weight: 300;
             line-height: 18px;
-            font-size: 13px;
-            margin-top: 8px;
-            padding-bottom: 8px;
+            font-size: 15px;
+            margin: 0;
           }
         }
 
+        .card-address {
+          font-size: 15px;
+          margin-bottom: 12px;
+          font-weight: 300;
+          color: gray;
+        }
         .card-pricing {
-          font-weight: lighter;
-          font-size: 22px;
-          position: absolute;
-          top: 14px;
-          right: 8px;
+          font-weight: bold;
+          font-size: 15px;
+          margin-bottom: 12px;
         }
     }
   }
+}
 
+
+.container-index {
+  display: flex;
+
+  .map-img {
+    width: 40%;
+    position: sticky;
+    top: 0;
+    margin-right: 30px;
+    height: 1080px;
+    padding: 50px;
+
+  }
+
+}
+
+.search-box {
+  position: absolute;
+  top: 56%;
+  left: 82%;
+  display: flex;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 50px;
+  height: 60px;
+  background: #114B5F;
+}
+
+.search-box:hover .search-txt {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-box:hover .search-btn {
+  background: #fff;
+  color:#114B5F
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: #F9EAE6;
+  transition: 0.5s;
+  font-size: 1rem;
+  width: 0px;
+}
+
+.search-btn {
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+::placeholder {
+  color: #F9EAE6;
+  opacity: 1;
 }
