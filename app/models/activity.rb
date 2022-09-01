@@ -8,4 +8,11 @@ class Activity < ApplicationRecord
   validates :address, presence: true
   validates_length_of :summary, minimum: 2
   validates :contact_info, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_attr,
+                  against: %i[name address price summary],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
