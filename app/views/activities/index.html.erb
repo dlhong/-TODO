@@ -1,16 +1,9 @@
-<div class="filters">
-  <ul>
-    <li><a href="#"><i class="fa-solid fa-plate-utensils"></i></a></li>
-    <li><a href="#"><i class="fa-solid fa-person-biking"></i></a></li>
-    <li><a href="#"><i class="fa-solid fa-people-group"></i></a></li>
-    <li><a href="#"><i class="fa-solid fa-people-line"></i></a></li>
-  </ul>
-</div>
 <div class="container-index">
   <div class="index-display">
     <% @activities.each do |activity| %>
       <%= render 'shared/cardview', activity: activity %>
     <% end %>
   </div>
+    <%= image_tag("map.png", :class => "map-img") %>
 </div>
 <%=  render 'shared/footer' %>
