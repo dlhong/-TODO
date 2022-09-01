@@ -5,6 +5,12 @@ class ActivitiesController < ApplicationController
   def index
     @activities = policy_scope(Activity)
     @activity = Activity.new
+    if params[:query].present?
+      @activities = policy_scope(Activity).search_by_attr(params[:query])
+    else
+      @activities = policy_scope(Activity)
+    end
+    # raise
     authorize @activity
   end
 
