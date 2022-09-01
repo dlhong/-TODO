@@ -1,16 +1,17 @@
 <div class="container-index">
   <div class="index-display">
   <ul>
+    <h2 class="profilebanner">My Saved Activities</h2>
     <% @savings.each do |saving| %>
-      <li><%= saving.user.first_name%>,
-      <%= link_to saving.activity.name, activity_path(saving.activity)%>,
-      <%= saving.attendance%></li>
-      <div class="dlt-btn">
-        <button class="btn-show"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>
-      </div>
-      <div class="dlt-btn">
-        <button class="btn-show"><%= link_to "Delete Saving", saving_path(saving),method: :delete, data: {confirm: "Are you sure?"} %></button>
-      </div>
+        <div class="card-saving">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-saving-infos">
+              <li><h3><%= link_to saving.activity.name, activity_path(saving.activity)%></h3></li>
+              <li><%= saving.attendance%></li>
+              <button class="btn btn-orange"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>
+              <button class="btn btn-primary"><%= link_to "Delete Saving", saving_path(saving),method: :delete, data: {confirm: "Are you sure?"} %></button>
+            </div>
+        </div>
     <% end %>
   </ul>
   </div>
