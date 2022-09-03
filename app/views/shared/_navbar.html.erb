@@ -11,44 +11,30 @@
     </ol>
   </div>
   <div class="left-nav">
-  <% unless current_page?(root_path) %>
+   <% unless current_page?(root_path) %>
     <div class="search-box">
-      <div class="form-outline">
-        <%= form_tag activities_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            type: "search",
-            id:"form1",
-            class: "form-control",
-            placeholder: "Search..."
-          %>
-        </div>
-          <%= button_tag(type: "submit", class: "btn btn-primary", style: "background-color: #114B5F") do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        <% end %>
-    </div>
       <input type="text" class="search-txt" name="" placeholder="Search">
       <a href="#" class="search-btn">
         <ion-icon name="search-outline"></ion-icon>
       </a>
     </div>
   <!-- Ionic Icons -->
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   <% end %>
     <%# <button type="button" class="btn btn-primary">Log in</button> %>
     <% unless user_signed_in? %>
       <button type="button" class="btn btn-primary"><%= link_to "Log in", new_user_session_path, {style:'color:#FFFFFF;'}%></button>
     <% else %>
+      <button type="button" class="btn btn-primary"><%= link_to "Log out", destroy_user_session_path, {style:'color:#FFFFFF;'}%></button>
       <div class="search-box">
-      <%# <input type="text" class="search-txt" name="" placeholder="Search"> %>
+      <input type="text" class="search-txt" name="" placeholder="Search">
       <a href="#" class="search-btn">
         <ion-icon name="search-outline"></ion-icon>
       </a>
     </div>
   <!-- Ionic Icons -->
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-    <% end %>
+      <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+      <% end %>
   </div>
 </div>
       <%# <button type="button" class="btn btn-primary"><%= link_to "Log out", destroy_user_session_path, {style:'color:#FFFFFF;'}</button>  %>
