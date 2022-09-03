@@ -4,7 +4,7 @@
       <%= render 'shared/cardview', activity: activity %>
     <% end %>
   </div>
-    <div class="map" style="width: 100%; height: 600px;"
+    <div class="map" style="width: 100%; height: 1080px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
