@@ -6,7 +6,9 @@
         <div class="card-infos">
             <div class="cont-info">
             <h2><%= activity.name %></h2>
-            <p><i class="fas fa-star"></i>    4.7</p>
+            <p><i class="fas fa-star"></i>
+              <%= Review.where(activity_id: activity.id).empty? ? 3.0 : Review.where(activity_id: activity.id).average(:ratings).round(1) %>
+            </p>
             </div>
             <h4 class="card-address"><%= activity.address %></h4>
             <h2 class="card-pricing"><%= activity.price %> € </h2>
