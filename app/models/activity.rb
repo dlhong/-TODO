@@ -3,6 +3,7 @@ class Activity < ApplicationRecord
   has_many :savings
   has_many :reviews
   has_many :activity_types
+  has_many_attached :photos
 
   validates :name, presence: true
   validates :address, presence: true
