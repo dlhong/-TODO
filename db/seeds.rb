@@ -26,7 +26,7 @@ i = 1
 for i in 1..15 do
   Activity.create(summary: activity[i]["brewery_type"],
                   name: activity[i]["name"],
-                  address: activity[i]["street"],
+                  address: [activity[i]["street"], activity[i]["city"]],
                   contact_info: activity[i]["phone"],
                   price: rand(0..100))
   i += 1
