@@ -30,7 +30,11 @@ gem 'pg_search', '~> 2.3.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
+<<<<<<< HEAD
 gem 'cloudinary', '~> 1.16.0'
+=======
+gem "geocoder"
+>>>>>>> fa12e55c0f924bf787350d97f4b4bdf43ac0a7bc
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'

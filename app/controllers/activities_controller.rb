@@ -5,6 +5,13 @@ class ActivitiesController < ApplicationController
   def index
     @activities = policy_scope(Activity)
     @activity = Activity.new
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { activity: activity })
+      }
+    end
     if params[:query].present?
       @activities = policy_scope(Activity).search_by_attr(params[:query])
     else

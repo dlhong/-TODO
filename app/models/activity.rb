@@ -10,6 +10,9 @@ class Activity < ApplicationRecord
   validates_length_of :summary, minimum: 2
   validates :contact_info, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   include PgSearch::Model
   pg_search_scope :search_by_attr,
                   against: %i[name address price summary],
