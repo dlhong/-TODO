@@ -13,6 +13,21 @@
   <div class="left-nav">
   <% unless current_page?(root_path) %>
     <div class="search-box">
+      <div class="form-outline">
+        <%= form_tag activities_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            type: "search",
+            id:"form1",
+            class: "form-control",
+            placeholder: "Search..."
+          %>
+        </div>
+          <%= button_tag(type: "submit", class: "btn btn-primary", style: "background-color: #114B5F") do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        <% end %>
+    </div>
       <input type="text" class="search-txt" name="" placeholder="Search">
       <a href="#" class="search-btn">
         <ion-icon name="search-outline"></ion-icon>
@@ -26,7 +41,7 @@
       <button type="button" class="btn btn-primary"><%= link_to "Log in", new_user_session_path, {style:'color:#FFFFFF;'}%></button>
     <% else %>
       <div class="search-box">
-      <input type="text" class="search-txt" name="" placeholder="Search">
+      <%# <input type="text" class="search-txt" name="" placeholder="Search"> %>
       <a href="#" class="search-btn">
         <ion-icon name="search-outline"></ion-icon>
       </a>
