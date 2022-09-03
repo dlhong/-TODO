@@ -7,10 +7,10 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 65px;
+  gap: 20px;
   padding-top: 50px;
   padding-bottom: 25px;
-  width: 60%;
+  width: 40%;
 }
 
 a {
@@ -22,8 +22,8 @@ a {
 .cards {
   border-radius: 16px;
   width: 300px;
-  margin-bottom: 30px;
   height: 330px;
+  margin-bottom: 32px;
 
 
   .top {
@@ -88,12 +88,12 @@ a {
   display: flex;
 
   .map-img {
-    width: 40%;
+    width: 60%;
     position: sticky;
     top: 0;
-    margin-right: 30px;
     height: 1080px;
-    padding: 50px;
+    object-fit: cover;
+    margin-top: 50px;
 
   }
 

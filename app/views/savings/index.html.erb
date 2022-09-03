@@ -1,18 +1,35 @@
-<div class="container-index">
-  <div class="index-display">
-  <ul>
-    <h2 class="profilebanner">My Saved Activities</h2>
-    <% @savings.each do |saving| %>
-        <div class="card-saving">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-saving-infos">
-              <li><h3><%= link_to saving.activity.name, activity_path(saving.activity)%></h3></li>
-              <li><%= saving.attendance%></li>
-              <button class="btn btn-orange"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>
-              <button class="btn btn-primary"><%= link_to "Delete Saving", saving_path(saving),method: :delete, data: {confirm: "Are you sure?"} %></button>
-            </div>
-        </div>
-    <% end %>
-  </ul>
+<div class="container">
+  <div class="profile-grid" data-controller="tab">
+    <div class="d-flex flex-column">
+      <div class="profile-card">
+          <div class="profile-top">
+            <img src="https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
+          </div>
+          <div class="profile-bottom">
+            <h4>Daniel Hong</h4>
+            <p>Thank You! Come again</p>
+            <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" class="ppic" alt="">
+          </div>
+      </div>
+      <div class="box4">Following</div>
+    </div>
+    <div class="d-flex flex-column">
+      <div class="box2">
+        <ol>
+          <li class="profile-nav" data-action="click->tab#show" id="Overview"><a href="#">Overview</a></li>
+          <li class="profile-nav" data-action="click->tab#show" id="Posts"><a href="#">Posts</a></li>
+          <li class="profile-nav" data-action="click->tab#show" id="Saved"><a href="#">Saved</a></li>
+          <li class="profile-nav" data-action="click->tab#show" id="Reviews"><a href="#">Reviews</a></li>
+          <li class="profile-nav"><a href="#">Events</a></li>
+          <li class="profile-nav"><a href="#">Media</a></li>
+        </ol>
+      </div>
+      <div class="box3" data-tab-target="section" id="Posts">
+        Create a new Post
+      </div>
+      <div class="box5 d-none" data-tab-target="section" id="Saved">Saves</div>
+      <div class="box6 d-none" data-tab-target="section" id="Reviews">Reviews</div>
+      <div class="box7 d-none" data-tab-target="section">hello</div>
+    </div>
   </div>
 </div>
