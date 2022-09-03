@@ -28,16 +28,16 @@
       <%# <button type="button" class="btn btn-primary"><%= link_to "Log out", destroy_user_session_path, {style:'color:#FFFFFF;'}%>
       <%# </button> %>
       <div class="search-box">
-        <%= form_tag activities_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            type: "text",
-            class: "search-txt",
-            placeholder: "Search"
-          %>
-          <%= button_tag(type: "submit", class: "search-btn border-0 pull-right d-inline-flex", style: "background-color: #114B5F") do %>
-            <ion-icon name="search-outline"></ion-icon>
-          <% end %>
+        <div class="row">
+          <%= form_tag activities_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              type: "text",
+              class: "search-txt",
+              placeholder: "Search"
+            %>
+        </div>
+        <button type="submit" name="" class="search-btn border-0"><ion-icon name="search-outline"></ion-icon></button>
         <% end %>
       <%# <input type="text" class="search-txt" name="" placeholder="Search"> %>
       <%# <a href="#" class="search-btn">
