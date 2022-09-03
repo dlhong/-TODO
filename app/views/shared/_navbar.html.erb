@@ -25,7 +25,8 @@
     <% unless user_signed_in? %>
       <button type="button" class="btn btn-primary"><%= link_to "Log in", new_user_session_path, {style:'color:#FFFFFF;'}%></button>
     <% else %>
-      <button type="button" class="btn btn-primary"><%= link_to "Log out", destroy_user_session_path, {style:'color:#FFFFFF;'}%></button>
+      <%# <button type="button" class="btn btn-primary"><%= link_to "Log out", destroy_user_session_path, {style:'color:#FFFFFF;'}%>
+      <%# </button> %>
       <div class="search-box">
       <input type="text" class="search-txt" name="" placeholder="Search">
       <a href="#" class="search-btn">
