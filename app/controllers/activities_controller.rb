@@ -10,7 +10,6 @@ class ActivitiesController < ApplicationController
       @activities = policy_scope(Activity)
     end
     markers
-    # raise
     authorize @activity
   end
 
