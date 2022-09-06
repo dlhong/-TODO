@@ -50,7 +50,20 @@
         </ol>
       </div>
       <div class="box3" data-tab-target="section" id="Posts">
-        Create a new Post
+        <div class="my-post">
+          <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" id="post-img" alt="">
+          <%= simple_form_for [@saving, @posting] do |f| %>
+          <%= f.input :content, placeholder: "Add your post here..." %>
+          <%= f.submit class:"btn btn-primary" %>
+          <% end %>
+        </div>
+        <div class="my-post">
+        <ul>
+          <% @postings.each do |posting| %>
+          <li><%= posting.content %></li>
+          <% end %>
+        </ul>
+        </div>
       </div>
       <div class="box5 d-none" data-tab-target="section" id="Saved">
         <% @savings.each do |saving| %>

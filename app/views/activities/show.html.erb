@@ -1,7 +1,8 @@
 <div class="show-container">
   <div class="show-content-div">
-    <h2><%= @activity.name%></h2>
-    <div class="show-images">
+  <h2><%= @activity.name%></h2>
+  <h5>3.0 ⭐️</h5>
+    <div class="show-images-grid">
       <img src="https://images.unsplash.com/photo-1528543606781-2f6e6857f318?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80" alt="">
       <img src="https://images.unsplash.com/photo-1542359649-31e03cd4d909?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" alt="">
     </div>
@@ -22,7 +23,7 @@
         <%= simple_form_for [@activity, @review] do |f| %>
           <%= f.input :content, placeholder: "Add your review here..." %>
           <%= f.input :ratings, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { data: { controller: "jquery-bar-rating" } } %>
-          <%= f.submit class:"btn btn-primary" %>
+          <%= f.submit class:"btn btn-orange" %>
         <% end %>
       </div>
     </div>

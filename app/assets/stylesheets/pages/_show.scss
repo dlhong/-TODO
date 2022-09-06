@@ -3,6 +3,10 @@ body {
   font-family: $Montserrat;
 }
 
+.show-content-div {
+  margin-top: 20px;
+}
+
 .show-container {
   display: flex;
   justify-content: center;
@@ -14,7 +18,7 @@ body {
   margin: 5px;
 }
 
-.show-images {
+.show-images-grid {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -22,7 +26,7 @@ body {
   gap: 16px;
 }
 
-.show-images > img {
+.show-images-grid > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -40,14 +44,19 @@ body {
 }
 
 .show-form {
-  border: 1px solid black;
+  border: 0.5px solid lightgray;
   border-radius: 6px;
   padding: 20px;
   width: 49%;
   margin-left: 15px;
+  box-shadow: #b9b9b9 0px 6px 16px;
 }
 
 .show-buttons {
   align-items: flex-end;
   margin-top: 68px;
+}
+
+img {
+  box-shadow: #b9b9b9 0px 6px 16px;
 }

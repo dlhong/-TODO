@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create destroy]
   end
   resources :savings, only: %i[edit update destroy]
+
+  resources :postings
 end
