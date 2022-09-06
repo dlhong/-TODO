@@ -67,15 +67,7 @@
       </div>
       <div class="box5 d-none" data-tab-target="section" id="Saved">
         <% @savings.each do |saving| %>
-          <div class="card-saving">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <div class="card-saving-infos">
-                <li><h3><%= link_to saving.activity.name, activity_path(saving.activity)%></h3></li>
-                <li><%= saving.attendance%></li>
-                <button class="btn btn-orange"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>
-                <button class="btn btn-primary"><%= link_to "Delete Saving", saving_path(saving),method: :delete, data: {confirm: "Are you sure?"} %></button>
-              </div>
-          </div>
+          <%= render 'shared/cardsaving', saving: saving %>
         <% end %>
       </div>
       <div class="box6 d-none" data-tab-target="section" id="Reviews">Reviews</div>

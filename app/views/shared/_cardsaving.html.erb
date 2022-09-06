@@ -1,0 +1,17 @@
+<%= link_to activity_path(saving.activity) do %>
+    <section>
+      <div class="card-saving">
+        <div class="saving-left">
+          <img src="https://images.pexels.com/photos/1267242/pexels-photo-1267242.jpeg?auto=compress&cs=tinysrgb&w=400" />
+        </div>
+        <div class="card-saving-infos">
+          <%= saving.activity.name %>
+          <%= saving.attendance%>
+        </div>
+      </div>
+      <button class="btn btn-orange"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>
+      <button class="btn btn-primary"><%= link_to "Delete Saving", saving_path(saving),method: :delete, data: {confirm: "Are you sure?"} %></button>
+    </section>
+<% end %>
+
+<%# z-index: 10; %>
