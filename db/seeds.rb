@@ -30,5 +30,21 @@ for i in 1..15 do
                   contact_info: activity[i]["phone"],
                   price: rand(0..100))
   i += 1
-  puts "done #{i}object"
+  puts "done! #{i - 1}object is now seeded"
 end
+
+# url = "https://api.seatgeek.com/2/events?client_id=Mjg5MTM0MTJ8MTY2MjQ4MjA0NS43Mzc3NjQx"
+# activity_serialized = URI.open(url).read
+# activity = JSON.parse(activity_serialized)
+
+# puts "Starting the seed"
+# i = 1
+# for i in 1..15 do
+#   Activity.create(summary: activity[i]["events"]["type"])
+#                   # name: activity[i]["name_v2"])
+#                   # address: [activity[i]["street"], activity[i]["city"]],
+#                   # contact_info: activity[i]["phone"],
+#                   # price: rand(0..100))
+#   i += 1
+#   puts "done! #{i - 1}object is now seeded"
+# end

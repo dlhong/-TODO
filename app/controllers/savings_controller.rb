@@ -6,6 +6,8 @@ class SavingsController < ApplicationController
     @savings = policy_scope(Saving).where(user_id: current_user.id)
     # @saving = Saving.new
     @user = current_user
+    @posting = Posting.new
+    @postings = policy_scope(Posting).where(user_id: current_user.id)
   end
 
   def new
