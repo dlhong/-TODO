@@ -50,7 +50,14 @@
         </ol>
       </div>
       <div class="box3" data-tab-target="section" id="Posts">
-        Create a new Post
+        <div class="my-post">
+          <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" id="post-img" alt="">
+          <%# add simple fomr for the input of the post %>
+          <input type="text" placeholder="Write a New Post">
+        </div>
+        <div class="my-post">
+          render the post here
+        </div>
       </div>
       <div class="box5 d-none" data-tab-target="section" id="Saved">
         <% @savings.each do |saving| %>
