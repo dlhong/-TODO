@@ -106,7 +106,8 @@ li {
         justify-content: space-around;
         border-radius: 8px;
         list-style-type: none;
-        background-color: #F8E9E6;
+        border: 1px solid lightgray;
+
         .profile-nav {
           display: inline-block;
           padding: 10px;
@@ -119,6 +120,32 @@ li {
       border: 1px solid lightgray;
       border-radius: 16px;
       margin-bottom: 1rem;
+      .my-post {
+        padding: 16px;
+        border: 1px solid gray;
+        margin: 16px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+       #post-img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        object-fit: cover;
+        margin-right: 8px;
+       }
+       input {
+        width: 100%;
+        padding: 10px 18px;
+        margin: 8px 0;
+        background-color: #EEF2F4;
+        border: none;
+        border-radius: 32px;
+
+       }
+
+      }
     }
     .box4{
       grid-row: 32/50;
