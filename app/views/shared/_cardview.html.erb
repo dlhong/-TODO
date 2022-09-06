@@ -5,7 +5,7 @@
       <div class="bottom">
         <div class="card-infos">
             <div class="cont-info">
-            <h2><%= activity.name %></h2>
+            <h2><%= activity.summary %></h2>
             <p><i class="fas fa-star"></i>
               <%= Review.where(activity_id: activity.id).empty? ? 3.0 : Review.where(activity_id: activity.id).average(:ratings).round(1) %>
             </p>

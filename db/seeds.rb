@@ -34,17 +34,18 @@ require "open-uri"
 # end
 
 
-url = "https://api.seatgeek.com/2/events?client_id=Mjg5MTM0MTJ8MTY2MjQ4MjA0NS43Mzc3NjQx"
+url = "https://api.seatgeek.com/2/events?per_page=25&client_id=Mjg5MTM0MTJ8MTY2MjQ4MjA0NS43Mzc3NjQx"
 activity_serialized = URI.open(url).read
-activity = JSON.parse(activity_serialized)
+activity = JSON.parse(activity_serialized)["events"]
 
+puts(activity[10])
 puts "Starting the seed"
-i = 1
-for i in 1..6 do
-  Activity.create(summary: activity["events"][i]["type"],
-                  name: activity["events"][i]["name"],
-                  address: activity["events"][i]["address"],
-                  contact_info: activity["events"][i]["url"],
+i = 0
+for i in 0..24 do
+  Activity.create(summary: activity[i]["title"],
+                  name: activity[i]["name"],
+                  address: activity[i]["venue"]["address"],
+                  contact_info: activity[i]["id"],
                   price: rand(0..100))
   i += 1
   puts "seeded the #{i - 1} object"
