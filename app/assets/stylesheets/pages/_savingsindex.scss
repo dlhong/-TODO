@@ -4,20 +4,42 @@ li {
 
 .card-saving {
   overflow: hidden;
-  height: 200px;
+  height: 220px;
   background: white;
-
+  margin: 20px;
+  box-shadow: $shadow-sm;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
   display: flex;
   align-items: center;
-  margin: 20px;
-  border-radius: 6px;
+  // .saving-left {
+  //   width: 34%;
+  //   img {
+  //     width: 100%;
+  //     height: 220px;
+  //     object-fit: cover;
+  //     border-top-left-radius: 8px;
+  //     border-bottom-left-radius: 8px;
+  //     object-position: 50% 83%;
+
+  //   }
+  // }
+  // .card-saving-infos {
+  //   width: 66%;
+
+
+
+  // }
+  // .card-link {
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  // }
+
 }
 
-.card-saving img {
-  height: 100%;
-  width: 200px;
-  object-fit: cover;
-}
 
 .card-saving h2 {
   font-size: 16px;
