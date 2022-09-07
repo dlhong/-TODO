@@ -31,6 +31,7 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 18px;
+  box-shadow: #b9b9b9 0px 6px 16px;
 }
 
 .show-images-row-2 {
@@ -57,6 +58,6 @@ body {
   margin-top: 68px;
 }
 
-img {
-  box-shadow: #b9b9b9 0px 6px 16px;
-}
+// img {
+//   box-shadow: #b9b9b9 0px 6px 16px;
+// }

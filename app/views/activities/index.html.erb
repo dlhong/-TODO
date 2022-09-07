@@ -1,7 +1,10 @@
 <div class="container-index">
   <div class="index-display">
     <% @activities.each do |activity| %>
+    <div class="indcard">
+      <button id="savebtn"><i class="fa-solid fa-heart"></i></button>
       <%= render 'shared/cardview', activity: activity %>
+    </div>
     <% end %>
   </div>
     <div class="map" style="width: 100%; height: 1080px;"
