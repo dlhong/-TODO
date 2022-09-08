@@ -5,18 +5,18 @@
     <% else %>
       <% image = activity.image %>
     <% end %>
-    <div class="cards">
+    <div class="cards-index">
       <div class="top test" style="background-image: url('<%= image%>')"></div>
-      <div class="bottom">
-        <div class="card-infos">
-            <div class="cont-info">
+      <div class="bottom-index">
+        <div class="card-infos-index">
+            <div class="cont-info-index">
             <h2><%= activity.summary %></h2>
             <p><i class="fas fa-star"></i>
               <%= Review.where(activity_id: activity.id).empty? ? 3.0 : Review.where(activity_id: activity.id).average(:ratings).round(1) %>
             </p>
             </div>
-            <h4 class="card-address"><%= activity.address %></h4>
-            <h2 class="card-pricing"><%= activity.price %> € </h2>
+            <h4 class="card-address-index"><%= activity.address %></h4>
+            <h2 class="card-pricing-index"><%= activity.price %> € </h2>
         </div>
       </div>
     </div>

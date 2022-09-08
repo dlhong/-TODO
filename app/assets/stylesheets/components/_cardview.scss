@@ -30,7 +30,7 @@ a {
 #savebtn:focus {
   color: rgb(247, 47, 47);
 }
-.cards {
+.cards-index {
   border-radius: 16px;
   width: 300px;
   height: 330px;
@@ -47,17 +47,17 @@ a {
     background-position: center;
   }
 
-  .bottom {
+  .bottom-index {
     width: 300px;
     height: 50px;
     margin-top: 16px;
 
 
-    .card-infos {
+    .card-infos-index {
       width: 300px;
       color: black;
 
-        .cont-info {
+        .cont-info-index {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -78,13 +78,13 @@ a {
           }
         }
 
-        .card-address {
+        .card-address-index {
           font-size: 15px;
           margin-bottom: 12px;
           font-weight: 300;
           color: gray;
         }
-        .card-pricing {
+        .card-pricing-index {
           font-weight: bold;
           font-size: 15px;
           margin-bottom: 12px;
