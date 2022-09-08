@@ -32,7 +32,7 @@ require "open-uri"
 #   i += 1
 #   puts "done #{i}object"
 # end
-
+Activity.destroy_all
 
 url = "https://api.seatgeek.com/2/events?per_page=25&client_id=Mjg5MTM0MTJ8MTY2MjQ4MjA0NS43Mzc3NjQx"
 activity_serialized = URI.open(url).read
@@ -43,7 +43,7 @@ puts "Starting the seed"
 i = 0
 for i in 0..24 do
   Activity.create(summary: activity[i]["title"],
-                  name: activity[i]["name"],
+                  name: activity[i]["venue"]["name"],
                   address: activity[i]["venue"]["address"],
                   contact_info: activity[i]["id"],
                   price: rand(0..100))
