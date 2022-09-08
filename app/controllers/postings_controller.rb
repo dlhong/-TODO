@@ -13,9 +13,8 @@ class PostingsController < ApplicationController
   def create
     @posting = Posting.new(postings_params)
     @posting.user = current_user
-    if @posting.save
-      redirect_to my_savings_path
-    end
+    redirect_to my_savings_path if @posting.save
+
     authorize @posting
   end
 

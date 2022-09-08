@@ -38,7 +38,7 @@ url = "https://api.seatgeek.com/2/events?per_page=25&client_id=Mjg5MTM0MTJ8MTY2M
 activity_serialized = URI.open(url).read
 activity = JSON.parse(activity_serialized)["events"]
 
-puts(activity[10])
+# puts(activity[10])
 puts "Starting the seed"
 i = 0
 for i in 0..24 do
