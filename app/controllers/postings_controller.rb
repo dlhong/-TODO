@@ -3,6 +3,7 @@ class PostingsController < ApplicationController
   def index
     @postings = policy_scope(Posting).where(user_id: current_user.id)
     @user = current_user
+    @saving = Saving.new
   end
 
   def new
@@ -19,6 +20,7 @@ class PostingsController < ApplicationController
   end
 
   def destroy
+    @posting = Posting.find(params[:id])
     @posting.destroy
     redirect_to my_savings_path
     authorize @posting
