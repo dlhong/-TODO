@@ -1,26 +1,20 @@
 <%= link_to activity_path(activity) do %>
   <section>
-    <div class="cards-index">
+    <div class="cards">
       <div class="top test" style="background-image: url('https://images.unsplash.com/photo-1593739742226-5e5e2fdb1f1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')"></div>
-      <div class="bottom-index">
-        <div class="card-infos-index">
-            <div class="cont-info-index">
-            <h2><%= activity.summary %></h2>
+      <div class="bottom">
+        <div class="card-infos">
+            <div class="cont-info">
+            <h2><%= activity.summary[0..24] %>...</h2>
             <p><i class="fas fa-star"></i>
               <%= Review.where(activity_id: activity.id).empty? ? 3.0 : Review.where(activity_id: activity.id).average(:ratings).round(1) %>
             </p>
             </div>
-            <h4 class="card-address-index"><%= activity.address %></h4>
-            <h2 class="card-pricing-index"><%= activity.price %> € </h2>
+            <h4 class="card-address"><%= activity.address %></h4>
         </div>
       </div>
     </div>
   </section>
 <% end %>
 
-
-      <%# <li><%= activity.name%>
-      <%# <%= activity.summary%>
-      <%# <%= activity.address%>
-      <%# <%= activity.contact_info%>
-      <%# <%= activity.price EURO</li> %>
+<%# z-index: 10; %>
