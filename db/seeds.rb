@@ -42,12 +42,15 @@ activity = JSON.parse(activity_serialized)["events"]
 puts "Starting the seed"
 i = 0
 for i in 0..24 do
-  Activity.create(summary: activity[i]["title"],
-                  name: activity[i]["name"],
-                  address: activity[i]["venue"]["address"],
-                  contact_info: activity[i]["id"],
-                  image: activity[i]["performers"][0]["image"],
-                  price: rand(0..100))
+  new_a = Activity.create(summary: activity[i]["title"],
+                          name: activity[i]["name"],
+                          address: activity[i]["venue"]["extended_address"],
+                          contact_info: activity[i]["id"],
+                          image: activity[i]["performers"][0]["image"],
+                          price: rand(0..100))
+  Type.create(name: activity[i]["type"])
+  ActivityType.create(activity_id: new_a.id,
+                      type_id: Type.where(name: activity[i]["type"]).first.id)
   i += 1
   puts "done! #{i - 1}object is now seeded"
 end
