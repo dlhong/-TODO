@@ -19,11 +19,22 @@ a {
   text-decoration: none;
 }
 
+#savebtn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #c4c3c3;
+  height: 50px;
+  width: 50px;
+}
+#savebtn:focus {
+  color: rgb(247, 47, 47);
+}
 .cards {
   border-radius: 16px;
   width: 300px;
   height: 330px;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 
 
   .top {
@@ -45,7 +56,6 @@ a {
     .card-infos {
       width: 300px;
       color: black;
-
 
         .cont-info {
           display: flex;
