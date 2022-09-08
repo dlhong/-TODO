@@ -46,6 +46,7 @@ for i in 0..24 do
                   name: activity[i]["name"],
                   address: activity[i]["venue"]["address"],
                   contact_info: activity[i]["id"],
+                  image: activity[i]["performers"][0]["image"],
                   price: rand(0..100))
   i += 1
   puts "done! #{i - 1}object is now seeded"
