@@ -59,8 +59,8 @@
         <div class="my-post">
           <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" id="post-img" alt="">
           <%= simple_form_for [@saving, @posting] do |f| %>
-          <%= f.input :content, placeholder: "Add your post here..." %>
-          <%= f.submit class:"btn btn-primary" %>
+          <%= f.input :content, placeholder: "Add your post here...", label: false, :input_html => { :class => 'post-input' }%>
+          <%= f.submit class:"btn btn-primary submit-post-btn" %>
           <% end %>
         </div>
         <div class="my-posting">
@@ -86,7 +86,9 @@
           <%= render 'shared/cardsaving', saving: saving %>
         <% end %>
       </div>
-      <div class="box6 d-none" data-tab-target="section" id="Reviews">Reviews</div>
+      <div class="box6 d-none" data-tab-target="section" id="Reviews">
+      See my reviews and also delete or CRUD for my reviews
+      </div>
       <div class="box7 d-none" data-tab-target="section">hello</div>
     </div>
   </div>
