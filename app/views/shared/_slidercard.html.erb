@@ -1,7 +1,12 @@
 <%= link_to activity_path(activity) do %>
   <section>
     <div class="cards">
-      <div class="top test" style="background-image: url('https://images.unsplash.com/photo-1593739742226-5e5e2fdb1f1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')"></div>
+     <% if activity.image.nil? %>
+      <% image = 'https://images.unsplash.com/photo-1593739742226-5e5e2fdb1f1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80' %>
+    <% else %>
+      <% image = activity.image %>
+    <% end %>
+      <div class="top test" style="background-image: url('<%= image%>')"></div>
       <div class="bottom">
         <div class="card-infos">
             <div class="cont-info">
