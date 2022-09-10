@@ -63,7 +63,7 @@
       <div class="card-wrapper swiper-wrapper">
         <!-- Slides -->
         <% @activities.each do |activity| %>
-          <div class="card swiper-slide"> <%= render 'shared/cardview', activity: activity %></div>
+          <div class="card swiper-slide"> <%= render 'shared/slidercard', activity: activity %></div>
         <% end %>
       </div>
       <!-- If we need pagination -->
