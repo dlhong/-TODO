@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.activity = @activity
     if @review.save
-      redirect_to activity_path(@activity)
+      redirect_to activity_path(@activity), notice: "Review Successfully Created"
     else
       flash.alert = "Review has not been saved, please use at minimum of 5 characters for the content of your review"
       redirect_to activity_path(@activity)
