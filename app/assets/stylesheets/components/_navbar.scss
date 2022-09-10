@@ -67,6 +67,13 @@
   height: 20px;
   transition: 0.3s ease-in-out all;
 
+  .logo {
+    height: 55px;
+    width: 142px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
   ol {
 
     border-radius: 16px;
