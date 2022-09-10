@@ -15,6 +15,7 @@
           <%= saving.attendance %>
         </div>
       </div>
+      <% if current_user == saving.user %>
       <button class="btn btn-orange"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>
       <button class="btn"><%= link_to saving_path(saving),method: :delete, data: {confirm: "Are you sure?"} do %>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -23,6 +24,7 @@
         </svg>
         <% end %>
       </button>
+      <% end %>
     </section>
 <% end %>
 
