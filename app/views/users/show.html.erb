@@ -6,7 +6,7 @@
             <img src="https://images.pexels.com/photos/459271/pexels-photo-459271.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
           </div>
           <div class="profile-bottom">
-            <h4>Daniel Hong</h4>
+            <h4><%= @user.first_name %></h4>
             <p>Thank You! Come again</p>
             <img src="https://xsgames.co/randomusers/avatar.php?g=male" class="ppic" alt="">
             <div class="socials">
@@ -62,7 +62,7 @@
             <div class="post-top">
               <img src="https://xsgames.co/randomusers/avatar.php?g=male" id="post-img" alt="">
               <div class="post-top-cont">
-                <h5>Daniel Hong</h5>
+                <h5><%= @user.first_name %></h5>
                 <h6><%= posting.created_at.strftime("%Y-%m-%d") %></h6>
               </div>
             </div>
@@ -81,9 +81,26 @@
       </div>
       <div class="box6 d-none" data-tab-target="section" id="Reviews">
         <% Review.where(user_id: @user).order(created_at: :desc).each do |review| %>
-          <%= review.content %>
+          <div class="post">
+            <div class="post-top">
+              <img src="https://xsgames.co/randomusers/avatar.php?g=male" id="post-img" alt="">
+              <div class="post-top-cont">
+                <h5><%= current_user.first_name.capitalize()%> <%= current_user.last_name.capitalize() %></h5>
+              </div>
+            </div>
+            <hr>
+            <div class="post-bottom">
+              <div class="top-rev">
+                <div class="div"><%= review.ratings %><i class="fas fa-star"></i></div>
+                <div class="rev-name"><%= review.activity.summary %></div>
+              </div>
+              <div class="div-cont"><%= review.content %></div>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%# hola %>
