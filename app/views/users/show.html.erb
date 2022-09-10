@@ -6,7 +6,7 @@
             <img src="https://images.pexels.com/photos/459271/pexels-photo-459271.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="">
           </div>
           <div class="profile-bottom">
-            <h4><%= current_user.first_name %></h4>
+            <h4>Daniel Hong</h4>
             <p>Thank You! Come again</p>
             <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" class="ppic" alt="">
             <div class="socials">
@@ -56,26 +56,14 @@
         </ol>
       </div>
       <div class="box3" data-tab-target="section" id="Posts">
-        <div class="my-post">
-          <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" id="post-img" alt="">
-          <%= simple_form_for [@saving, @posting] do |f| %>
-          <%# <%= f.input :content, placeholder: "Add your post here...", label: false, :input_html => { :class => 'post-input' }%>
-          <div class="field">
-            <%= f.label :content %>
-            <%= f.rich_text_area :content %>
-          </div>
-          <%= f.submit class:"btn btn-primary submit-post-btn" %>
-          <% end %>
-        </div>
         <div class="my-posting">
-          <% @postings.each do |posting| %>
+          <% Posting.where(user_id: @user).each do |posting| %>
           <div class="post">
             <div class="post-top">
               <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" id="post-img" alt="">
               <div class="post-top-cont">
                 <h5>Daniel Hong</h5>
                 <h6><%= posting.created_at.strftime("%Y-%m-%d") %></h6>
-                <button class="btn btn-primary"><%= link_to "Delete Posting", posting_path(posting),method: :delete, data: {confirm: "Are you sure?"} %></button>
               </div>
             </div>
             <hr>
@@ -87,16 +75,15 @@
         </div>
       </div>
       <div class="box5 d-none" data-tab-target="section" id="Saved">
-        <% @savings.each do |saving| %>
+        <% Saving.where(user_id: @user).each do |saving| %>
           <%= render 'shared/cardsaving', saving: saving %>
         <% end %>
       </div>
       <div class="box6 d-none" data-tab-target="section" id="Reviews">
-        <% @reviews.each do |review| %>
+        <% Review.where(user_id: @user).each do |review| %>
           <%= review.content %>
         <% end %>
       </div>
-      <div class="box7 d-none" data-tab-target="section">hello</div>
     </div>
   </div>
 </div>

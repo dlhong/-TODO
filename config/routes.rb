@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :savings, only: %i[edit update destroy]
 
   resources :postings
+
+  resources :users
 end
