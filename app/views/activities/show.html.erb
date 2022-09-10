@@ -33,4 +33,9 @@
       </div>
     </div>
   </div>
+  <div class="reviews-showpage">
+    <% @reviews.each do |review| %>
+      <%= review.content %>
+    <% end %>
+  </div>
 </div>
