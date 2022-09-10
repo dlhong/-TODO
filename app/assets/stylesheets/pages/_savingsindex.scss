@@ -367,6 +367,24 @@ li {
       border-radius: 16px;
       margin-bottom: 1rem;
 
+      .post-bottom {
+        .top-rev {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          div {
+            color: rgb(234, 195, 0);
+          }
+          .rev-name {
+            color: rgb(122, 122, 122);
+            margin-left: 10px;
+          }
+        }
+        .div-cont {
+          padding-top: 12px;
+        }
+      }
+
         .post {
           padding: 2rem;
           background-color: white;

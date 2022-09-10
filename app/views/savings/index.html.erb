@@ -115,9 +115,11 @@
             </div>
             <hr>
             <div class="post-bottom">
-              <%= review.activity.summary %>
-              <%= review.content %>
-              <%= review.ratings %>
+              <div class="top-rev">
+                <div class="div"><%= review.ratings %><i class="fas fa-star"></i></div>
+                <div class="rev-name"><%= review.activity.summary %></div>
+              </div>
+              <div class="div-cont"><%= review.content %></div>
             </div>
           </div>
         <% end %>
