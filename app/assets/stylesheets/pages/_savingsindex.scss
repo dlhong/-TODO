@@ -82,7 +82,8 @@ li {
 
 
       .profile-card {
-
+        position: sticky;
+        top: 28px;
       grid-row: 1/32;
       .profile-top {
         height: 32%;
@@ -219,7 +220,7 @@ li {
 
 
         #posting_content {
-          height: 250px;
+          min-height: 250px;
           margin-top: 12px;
           width: 100%;
           border: 1px solid lightgray;
@@ -317,7 +318,8 @@ li {
       border-radius: 16px;
       height: auto;
       margin-top: 1rem;
-
+      position: sticky;
+      top: 545px;
       .card-flex {
         padding: 16px;
         h5 {

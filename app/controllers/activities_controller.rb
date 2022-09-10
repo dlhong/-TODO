@@ -25,6 +25,7 @@ class ActivitiesController < ApplicationController
   def show
     @saving = Saving.new
     @review = Review.new
+    @reviews = Review.where(activity_id: @activity)
     authorize @activity
   end
 
