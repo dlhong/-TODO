@@ -57,7 +57,7 @@
       </div>
       <div class="box3" data-tab-target="section" id="Posts">
         <div class="my-posting">
-          <% Posting.where(user_id: @user).each do |posting| %>
+          <% Posting.where(user_id: @user).order(created_at: :desc).each do |posting| %>
           <div class="post">
             <div class="post-top">
               <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" id="post-img" alt="">
@@ -80,7 +80,7 @@
         <% end %>
       </div>
       <div class="box6 d-none" data-tab-target="section" id="Reviews">
-        <% Review.where(user_id: @user).each do |review| %>
+        <% Review.where(user_id: @user).order(created_at: :desc).each do |review| %>
           <%= review.content %>
         <% end %>
       </div>
