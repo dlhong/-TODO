@@ -8,7 +8,7 @@
           <div class="profile-bottom">
             <h4>Daniel Hong</h4>
             <p>Thank You! Come again</p>
-            <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" class="ppic" alt="">
+            <img src="https://xsgames.co/randomusers/avatar.php?g=male" class="ppic" alt="">
             <div class="socials">
               <a style="color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f fa-lg"></i></a>
               <a style="color: #55acee;" href="#!" role="button"><i class="fab fa-twitter fa-lg"></i></a>
@@ -60,7 +60,7 @@
           <% Posting.where(user_id: @user).order(created_at: :desc).each do |posting| %>
           <div class="post">
             <div class="post-top">
-              <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" id="post-img" alt="">
+              <img src="https://xsgames.co/randomusers/avatar.php?g=male" id="post-img" alt="">
               <div class="post-top-cont">
                 <h5>Daniel Hong</h5>
                 <h6><%= posting.created_at.strftime("%Y-%m-%d") %></h6>
