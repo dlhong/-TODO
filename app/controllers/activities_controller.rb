@@ -6,6 +6,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
     if params[:query].present?
       @activities = policy_scope(Activity).search_by_attr(params[:query])
+      if @activities.empty?
+        redirect_to request.referer, notice: "No Possible Result"
+        @activities = policy_scope(Activity)
+      end
     else
       @activities = policy_scope(Activity)
     end
