@@ -8,6 +8,8 @@
       <li class="nav-item"><a href="#"><%= link_to "Activities", activities_path %></a></li>
       <li class="nav-item"><a href="#">About-Us</a></li>
       <li class="nav-item"><a href="#">FAQs</a></li>
+      <li class="nav-item"><a href="#"><%= link_to "Users", users_path %></a></li>
+      <button type="button" class="btn btn-primary"><%= link_to "Log out", destroy_user_session_path, {style:'color:#FFFFFF;'}%></button>
     </ol>
   </div>
   <div class="left-nav">

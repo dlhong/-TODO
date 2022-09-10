@@ -8,6 +8,8 @@ class SavingsController < ApplicationController
     @user = current_user
     @posting = Posting.new
     @postings = policy_scope(Posting).where(user_id: current_user.id)
+    @review = Review.new
+    @reviews = policy_scope(Review).where(user_id: current_user.id)
   end
 
   def new
