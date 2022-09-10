@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = policy_scope(User)
+    @users = policy_scope(User).reject { |user| user == current_user }
   end
 
   def show
