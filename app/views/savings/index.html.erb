@@ -68,7 +68,7 @@
           <% end %>
         </div>
         <div class="my-posting">
-          <% @postings.each do |posting| %>
+          <% @postings.order(created_at: :desc).each do |posting| %>
           <div class="post">
             <div class="post-top">
               <img src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600" id="post-img" alt="">
@@ -98,7 +98,7 @@
         <% end %>
       </div>
       <div class="box6 d-none" data-tab-target="section" id="Reviews">
-        <% @reviews.each do |review| %>
+        <% @reviews.order(created_at: :desc).each do |review|  %>
           <%= review.content %>
           <button class="btn"><%= link_to review_path(review),method: :delete, data: {confirm: "Are you sure?"} do %>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
