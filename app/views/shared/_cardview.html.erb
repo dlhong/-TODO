@@ -10,7 +10,7 @@
       <div class="bottom-index">
         <div class="card-infos-index">
             <div class="cont-info-index">
-            <h2><%= activity.summary %></h2>
+            <h2><%= activity.summary[0..28] %>...</h2>
             <p><i class="fas fa-star"></i>
               <%= Review.where(activity_id: activity.id).empty? ? 3.0 : Review.where(activity_id: activity.id).average(:ratings).round(1) %>
             </p>
