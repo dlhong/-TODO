@@ -56,6 +56,14 @@ body {
 .show-buttons {
   align-items: flex-end;
   margin-top: 68px;
+  .btn-primary {
+    background-color: #F9EAE6;
+    color: #ff9578;
+    padding: 10px 18px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 32px !important;
+  }
 }
 
 // img {
