@@ -1,7 +1,16 @@
 <div class="show-container">
   <div class="show-content-div">
-  <h2><%= @activity.name%></h2>
-  <h5>3.0 ⭐️</h5>
+  <h2><%= @activity.summary%></h2>
+  <div class="top-show-cont">
+    <h5>3.0 ⭐️</h5>
+      <%= simple_form_for [@activity, @saving] do |f| %>
+      <%= button_tag type: 'submit', class: @saved.empty? ? "heart-save" : "heart-red" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+          </svg>
+      <% end %>
+      <% end %>
+  </div>
     <div class="show-images-grid">
     <% if @activity.image.nil? %>
       <% image = 'https://images.unsplash.com/photo-1593739742226-5e5e2fdb1f1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80' %>
