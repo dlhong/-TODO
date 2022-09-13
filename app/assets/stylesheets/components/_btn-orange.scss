@@ -1,14 +1,8 @@
 .btn-orange {
-  background-color: #F9EAE6;
-  color: #ff9578;
-  padding: 10px 18px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 32px !important;
-
-
+  background: #FAC494;
+  color: white;
   &:hover {
-    color: #ff9578;
-    background: #F9EAE6;
+    color: white;
+    background: #FAC494;
   }
 }

@@ -26,7 +26,6 @@ class ActivitiesController < ApplicationController
     @saving = Saving.new
     @review = Review.new
     @reviews = Review.where(activity_id: @activity)
-    @saved = Saving.where(user: current_user, activity: @activity)
     authorize @activity
   end
 

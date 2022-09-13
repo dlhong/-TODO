@@ -23,6 +23,19 @@ li {
       object-position: 50% 83%;
      }
   }
+  // .card-saving-infos {
+  //   width: 66%;
+
+
+
+  // }
+  // .card-link {
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  // }
 
 }
 
@@ -43,23 +56,15 @@ li {
 
 .card-saving .card-saving-infos {
   padding: 16px;
-  .btn-primary {
-    background-color: #F9EAE6;
-    padding: 10px 18px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 32px !important;
-    a {
-      color: #ff9578 !important;
-    }
-  }
 }
 
 .profilebanner {
   text-align: center;
 }
 
-
+.btn a {
+  color: white;
+}
 
 .bi-trash {
   color: black;
