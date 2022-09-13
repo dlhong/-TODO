@@ -23,10 +23,10 @@ class SavingsController < ApplicationController
     @saving.activity = @activity
     @review = Review.new
     if @saving.save
-      redirect_to request.referer, notice: "Activity Saved"
+      redirect_to activity_path(@activity), notice: "Activity Saved"
     else
-      flash.alert = "It has been saved before"
-      render "activities/show"
+      flash.alert = "Activity has not been saved"
+      redirect_to activity_path(@activity)
     end
     authorize @saving
     authorize @activity
