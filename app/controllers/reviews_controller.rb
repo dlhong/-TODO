@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to activity_path(@activity), notice: "Review Successfully Created"
     else
-      flash.alert = "Review has not been saved, please use at minimum of 5 characters for the content of your review"
+      flash.alert = "Review has not been saved, please confirm that you have filled in all the fields"
       redirect_to activity_path(@activity)
     end
     authorize @review
@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
   private
 
   def reviews_params
-    params.require(:review).permit(:ratings, :content)
+    params.require(:review).permit(:ratings, :content, :title)
   end
 
   def set_review
