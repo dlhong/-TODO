@@ -26,12 +26,16 @@
       <p>Location: <%= @activity.address%></p>
       <h3>Price: <%= @activity.price%>€</h3>
       <div class="show-buttons">
+      <%= simple_form_for [@activity, @saving] do |f| %>
+      <%= f.button :submit, 'Save Activity', class: 'btn-orange' %>
+      <% end %>
       <%= link_to "Go back to Activities", activities_path, class: 'btn btn-primary' %>
     </div>
     </div>
       <div class="show-form">
         <h5>Add your review</h5>
         <%= simple_form_for [@activity, @review] do |f| %>
+          <%= f.input :title, placeholder: "Add your review title here..." %>
           <%= f.input :content, placeholder: "Add your review here..." %>
           <%= f.input :ratings, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { data: { controller: "jquery-bar-rating" } } %>
           <%= f.submit class:"btn btn-orange" %>
@@ -40,10 +44,11 @@
     </div>
   </div>
   <div class="reviews-showpage">
-  <% if @reviews != nil %>
     <% @reviews.each do |review| %>
+      <%= link_to "#{review.user.first_name} #{review.user.last_name}", user_path(review.user) %>
+      <%= review.title %>
       <%= review.content %>
+      <%= review.ratings %>
     <% end %>
-  <% end %>
   </div>
 </div>
