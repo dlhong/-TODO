@@ -5,6 +5,29 @@ body {
 
 .show-content-div {
   margin-top: 20px;
+  .top-show-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+
+    .heart-save {
+      background-color: transparent;
+      border: none;
+      height: 30px;
+      width: 30px;
+      font-size: 22px;
+    }
+
+    .heart-red {
+      background-color: transparent;
+      color: red;
+      border: none;
+      height: 30px;
+      width: 30px;
+      font-size: 22px;
+    }
+  }
 }
 
 .show-container {
@@ -21,9 +44,9 @@ body {
 .show-images-grid {
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 400px;
   gap: 16px;
+  margin-bottom: 44px;
 }
 
 .show-images-grid > img {
