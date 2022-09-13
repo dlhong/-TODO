@@ -5,7 +5,7 @@
     <h5>3.0 ⭐️</h5>
       <%= simple_form_for [@activity, @saving] do |f| %>
       <%= button_tag type: 'submit', class: @saved.empty? ? "heart-save" : "heart-red" do %>
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
           </svg>
       <% end %>
@@ -26,9 +26,6 @@
       <p>Location: <%= @activity.address%></p>
       <h3>Price: <%= @activity.price%>€</h3>
       <div class="show-buttons">
-      <%= simple_form_for [@activity, @saving] do |f| %>
-      <%= f.button :submit, 'Save Activity', class: 'btn-orange' %>
-      <% end %>
       <%= link_to "Go back to Activities", activities_path, class: 'btn btn-primary' %>
     </div>
     </div>
@@ -44,7 +41,12 @@
     </div>
   </div>
   <div class="reviews-showpage">
-    <% @reviews.each do |review| %>
+    <% if @reviews != nil %>
+      <% @reviews.each do |review| %>
+        <%= review.content %>
+      <% end %>
+    <% end %>
+      <% @reviews.each do |review| %>
       <%= link_to "#{review.user.first_name} #{review.user.last_name}", user_path(review.user) %>
       <%= review.title %>
       <%= review.content %>
