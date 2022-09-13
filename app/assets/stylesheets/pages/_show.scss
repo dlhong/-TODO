@@ -51,8 +51,8 @@ body {
 }
 
 .show-images-grid > img {
-  width: 100%;
-  height: 100%;
+  width: 1111px;
+  height: 400px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: #b9b9b9 0px 6px 16px;
@@ -65,21 +65,83 @@ body {
 .show-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 8px;
+
+  .show-info {
+    width: 46%;
+
+    .basic-info {
+      margin-bottom: 32px;
+      h3 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 16px;
+        margin: 0;
+        color: #939292;
+      }
+      h4 {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #939292;
+      }
+      .show-hr {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+  }
+  hr {
+    margin-bottom: 40px;
+  }
+  .list-show {
+    .list-show-div {
+      padding-top: 0;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      justify-self: start;
+      .list-show-cont {
+        padding-left: 14px;
+        h5 {
+          font-size: 17px;
+          font-weight: 500;
+          margin-bottom: 4px;
+        }
+        p {
+          font-size: 14px;
+          color: #939292;
+        }
+      }
+    }
+  }
+}
+.show-hr-2 {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.reviews-showpage {
+  margin-top: 60px;
+  h2 {
+    font-size: 22px;
+  }
 }
 
 .show-form {
-  border: 0.5px solid lightgray;
+  border: 1px solid lightgray;
   border-radius: 6px;
   padding: 20px;
   width: 49%;
   margin-left: 15px;
-  box-shadow: #b9b9b9 0px 6px 16px;
+
+  #review_content {
+    min-height: 160px;
+  }
 }
 
 .show-buttons {
   align-items: flex-end;
-  margin-top: 68px;
   .btn-primary {
     background-color: #F9EAE6;
     color: #ff9578;
