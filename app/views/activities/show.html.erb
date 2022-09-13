@@ -33,7 +33,6 @@
         <% end %>
       </div>
     </div>
-  </div>
   <div class="reviews-showpage">
     <% @reviews.each do |review| %>
       <%= link_to "#{review.user.first_name} #{review.user.last_name}", user_path(review.user) %>
@@ -41,5 +40,6 @@
       <%= review.content %>
       <%= review.ratings %>
     <% end %>
+  </div>
   </div>
 </div>
