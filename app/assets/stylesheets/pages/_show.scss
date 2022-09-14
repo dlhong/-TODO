@@ -10,6 +10,12 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 8px;
+    margin-bottom: 12px;
+
+    .fas {
+        color: rgb(255, 217, 0);
+      }
+
 
     .heart-save {
       background-color: transparent;
@@ -17,6 +23,7 @@ body {
       height: 30px;
       width: 30px;
       font-size: 22px;
+      color: #939292;
     }
 
     .heart-red {
