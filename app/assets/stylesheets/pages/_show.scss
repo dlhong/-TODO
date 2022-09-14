@@ -21,7 +21,7 @@ body {
 
     .heart-red {
       background-color: transparent;
-      color: red;
+      color: #F50101;
       border: none;
       height: 30px;
       width: 30px;
@@ -55,7 +55,7 @@ body {
   height: 400px;
   object-fit: cover;
   border-radius: 18px;
-  box-shadow: #b9b9b9 0px 6px 16px;
+  box-shadow: $shadow-md;
 }
 
 .show-images-row-2 {
@@ -149,6 +149,57 @@ body {
     margin: 8px 0;
     border: none;
     border-radius: 32px !important;
+  }
+}
+
+.reviews {
+  padding: 30px;
+  width: 50%;
+  margin: 24px;
+  .review-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .top-noimg {
+      margin-left: 16px;
+
+      h4 {
+        font-size: 18px;
+        font-weight: bold;
+
+      }
+      p {
+        font-size: 14px;
+        color: #595959;
+        margin: 0;
+
+      }
+    }
+    h6 {
+      position: absolute;
+      right: 12px;
+      #star {
+        color: rgb(255, 217, 0);
+      }
+    }
+  }
+  .review-bottom {
+    margin-top: 20px;
+    h3 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    p {
+      color: #595959;
+    }
   }
 }
 
