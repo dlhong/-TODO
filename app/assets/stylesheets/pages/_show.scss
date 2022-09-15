@@ -50,10 +50,9 @@ body {
 
 .show-images-grid {
   box-sizing: border-box;
-  display: grid;
-
-  grid-auto-rows: 400px;
-  gap: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 44px;
 }
 
