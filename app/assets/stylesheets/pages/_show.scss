@@ -10,6 +10,12 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 8px;
+    margin-bottom: 12px;
+
+    .fas {
+        color: rgb(255, 217, 0);
+      }
+
 
     .heart-save {
       background-color: transparent;
@@ -17,11 +23,12 @@ body {
       height: 30px;
       width: 30px;
       font-size: 22px;
+      color: #939292;
     }
 
     .heart-red {
       background-color: transparent;
-      color: red;
+      color: #F50101;
       border: none;
       height: 30px;
       width: 30px;
@@ -51,11 +58,11 @@ body {
 }
 
 .show-images-grid > img {
-  width: 100%;
-  height: 100%;
+  width: 1111px;
+  height: 400px;
   object-fit: cover;
   border-radius: 18px;
-  box-shadow: #b9b9b9 0px 6px 16px;
+  box-shadow: $shadow-md;
 }
 
 .show-images-row-2 {
@@ -65,21 +72,83 @@ body {
 .show-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 8px;
+
+  .show-info {
+    width: 46%;
+
+    .basic-info {
+      margin-bottom: 32px;
+      h3 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 16px;
+        margin: 0;
+        color: #939292;
+      }
+      h4 {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #939292;
+      }
+      .show-hr {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+  }
+  hr {
+    margin-bottom: 40px;
+  }
+  .list-show {
+    .list-show-div {
+      padding-top: 0;
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      justify-self: start;
+      .list-show-cont {
+        padding-left: 14px;
+        h5 {
+          font-size: 17px;
+          font-weight: 500;
+          margin-bottom: 4px;
+        }
+        p {
+          font-size: 14px;
+          color: #939292;
+        }
+      }
+    }
+  }
+}
+.show-hr-2 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.reviews-showpage {
+  margin-top: 60px;
+  h2 {
+    font-size: 22px;
+  }
 }
 
 .show-form {
-  border: 0.5px solid lightgray;
+  border: 1px solid lightgray;
   border-radius: 6px;
   padding: 20px;
   width: 49%;
   margin-left: 15px;
-  box-shadow: #b9b9b9 0px 6px 16px;
+
+  #review_content {
+    min-height: 160px;
+  }
 }
 
 .show-buttons {
   align-items: flex-end;
-  margin-top: 68px;
   .btn-primary {
     background-color: #F9EAE6;
     color: #ff9578;
@@ -87,6 +156,64 @@ body {
     margin: 8px 0;
     border: none;
     border-radius: 32px !important;
+  }
+}
+
+// create a grid and then display the each.do insdie
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.reviews {
+  padding: 30px;
+  margin: 24px;
+  width: 100%;
+
+  .review-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .top-noimg {
+      margin-left: 16px;
+
+      h4 {
+        font-size: 18px;
+        font-weight: bold;
+
+      }
+      p {
+        font-size: 14px;
+        color: #595959;
+        margin: 0;
+
+      }
+    }
+    h6 {
+      position: absolute;
+      right: 12px;
+      #star {
+        color: rgb(255, 217, 0);
+      }
+    }
+  }
+  .review-bottom {
+    margin-top: 20px;
+    h3 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+    p {
+      color: #595959;
+    }
   }
 }
 
