@@ -47,10 +47,11 @@ for i in 0..29 do
                           address: activity[i]["venue"]["extended_address"],
                           contact_info: activity[i]["id"],
                           image: activity[i]["performers"][0]["image"],
+                          types: activity[i]["taxonomies"][0]["name"],
                           price: rand(0..100))
-  Type.create(name: activity[i]["type"])
+  Type.create(name: activity[i]["taxonomies"][0]["name"])
   ActivityType.create(activity_id: new_a.id,
-                      type_id: Type.where(name: activity[i]["type"]).first.id)
+                      type_id: Type.where(name: activity[i]["taxonomies"][0]["name"]).first.id)
   i += 1
   puts "done! #{i - 1}object is now seeded"
 end

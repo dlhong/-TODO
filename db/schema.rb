@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_13_183813) do
+ActiveRecord::Schema.define(version: 2022_09_15_162802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2022_09_13_183813) do
     t.float "latitude"
     t.float "longitude"
     t.string "image"
+    t.string "types"
   end
 
   create_table "activity_participants", force: :cascade do |t|

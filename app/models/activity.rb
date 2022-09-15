@@ -15,7 +15,7 @@ class Activity < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_attr,
-                  against: %i[name address price summary],
+                  against: %i[name address price summary types],
                   using: {
                     tsearch: { prefix: true }
                   }
