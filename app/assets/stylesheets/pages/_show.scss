@@ -125,8 +125,8 @@ body {
   }
 }
 .show-hr-2 {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 .reviews-showpage {
   margin-top: 60px;
@@ -159,10 +159,17 @@ body {
   }
 }
 
+// create a grid and then display the each.do insdie
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
 .reviews {
   padding: 30px;
-  width: 50%;
   margin: 24px;
+  width: 100%;
+
   .review-top {
     position: relative;
     display: flex;

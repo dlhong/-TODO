@@ -99,8 +99,13 @@
       <div class="box6 d-none" data-tab-target="section" id="Reviews">
          <% @reviews.order(created_at: :desc).each do |review|  %>
           <div class="post">
+          <%# if image nil put static pexels %>
             <div class="post-top">
-              <img src='<%= review.activity.image %>' id="post-img">
+              <% if review.activity.image.nil? %>
+                  <% image = 'https://images.pexels.com/photos/450062/pexels-photo-450062.jpeg?auto=compress&cs=tinysrgb&w=1600' %>
+                <% else %>
+                  <img src='<%= review.activity.image %>' id="post-img">
+              <% end %>
               <div class="post-top-cont">
               <%= link_to activity_path(review.activity) do %>
                 <h5><%= review.activity.summary %></h5>

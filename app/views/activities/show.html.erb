@@ -84,29 +84,32 @@
       </div>
     </div>
     <hr class="show-hr-2">
-    <div class="reviews-showpage">
+    <div class="container">
        <h2><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
           <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
           </svg> - 15 reviews
         </h2>
-      <% @reviews.each do |review| %>
-        <div class="reviews">
-          <div class="review-top">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Sin_cara.png" alt="">
-            <div class="top-noimg">
-              <h4><%= link_to "#{review.user.first_name} #{review.user.last_name}", user_path(review.user) %></h4>
-              <p><%= review.created_at.strftime("%Y-%m-%d") %></p>
+        <div class="row">
+          <% @reviews.order(created_at: :desc).each do |review| %>
+            <div class="reviews col-sm-6">
+              <div class="review-top">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Sin_cara.png" alt="">
+                <div class="top-noimg">
+                  <h4><%= link_to "#{review.user.first_name} #{review.user.last_name}", user_path(review.user) %></h4>
+                  <p><%= review.created_at.strftime("%Y-%m-%d") %></p>
+                </div>
+                <h6><%= review.ratings %>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="star" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></h6>
+              </div>
+              <div class="review-bottom">
+                <h3><%= review.title %></h3>
+                <p><%= review.content %></p>
+              </div>
             </div>
-            <h6><%= review.ratings %>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="star" class="bi bi-star-fill" viewBox="0 0 16 16"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></h6>
-          </div>
-          <div class="review-bottom">
-            <h3><%= review.title %></h3>
-            <p><%= review.content %></p>
-          </div>
+          <% end %>
         </div>
-      <% end %>
     </div>
   </div>
 </div>
-
-<%# hola %>
+<%#
+create a grid div after the hr
+add a class to each iteration that will place them in the grid %>
