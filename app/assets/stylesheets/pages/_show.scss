@@ -158,7 +158,20 @@ body {
     border-radius: 32px !important;
   }
 }
-
+.container {
+  .avg-rev {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    h2 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 22px;
+      margin-left: 22px;
+    }
+  }
+}
 // create a grid and then display the each.do insdie
 .row {
   display: grid;
