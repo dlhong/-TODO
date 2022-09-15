@@ -58,7 +58,7 @@ body {
 }
 
 .show-images-grid > img {
-  width: 100%;
+  width: 1111px;
   height: 400px;
   object-fit: cover;
   border-radius: 18px;
@@ -73,7 +73,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
-  width: 1111px;
+  width: 100%;
 
   .show-info {
     width: 46%;
