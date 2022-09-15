@@ -17,7 +17,7 @@
           <br>
             <%= saving.activity.address %>
           <br>
-            <%= saving.attendance %>
+            <%= saving.attendance ?  "Attended" : "Not attended" %>
           <br>
             <% if current_user == saving.user %>
             <button class="btn btn-primary submit-post-btn"><%= link_to "Update Attendance", saving_path(saving),method: :patch, data: {confirm: "Are you sure?"} %></button>

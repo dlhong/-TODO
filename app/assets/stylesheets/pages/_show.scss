@@ -163,12 +163,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: start;
+    position: relative;
     h2 {
       font-size: 24px;
     }
     h3 {
       font-size: 22px;
-      margin-left: 22px;
+      margin-left: 36px;
+    }
+    .bi {
+      position: absolute;
+      top: 3px;
+      left: 36px;
     }
   }
 }
