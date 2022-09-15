@@ -2,7 +2,7 @@
   <div class="show-content-div">
   <h2><%= @activity.summary%></h2>
   <div class="top-show-cont">
-    <h5>Rate average <i class="fas fa-star"></i></h5>
+    <h5><%= Review.where(activity_id: @activity.id).empty? ? 3.0 : Review.where(activity_id: @activity.id).average(:ratings).round(1) %><i class="fas fa-star"></i></h5>
       <%= simple_form_for [@activity, @saving] do |f| %>
       <%= button_tag type: 'submit', class: @saved.empty? ? "heart-save" : "heart-red" do %>
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
@@ -85,9 +85,9 @@
     </div>
     <hr class="show-hr-2">
     <div class="container">
-       <h2><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+       <h2><%= Review.where(activity_id: @activity.id).empty? ? 3.0 : Review.where(activity_id: @activity.id).average(:ratings).round(1) %><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
           <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-          </svg> - 15 reviews
+          </svg> <%= Review.where(activity_id: @activity.id).count %> - Reviews
         </h2>
         <div class="row">
           <% @reviews.order(created_at: :desc).each do |review| %>
